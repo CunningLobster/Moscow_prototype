@@ -466,6 +466,7 @@ MonoBehaviour:
   plain: {fileID: 396822354}
   player: {fileID: 59341413}
   velocity: 80
+  playerAvatar: {fileID: 1529459380}
 --- !u!4 &524173459
 Transform:
   m_ObjectHideFlags: 0
@@ -872,6 +873,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Library: []
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 0a3778f622705f34dbb7dd725a89f71d, type: 3}
+--- !u!114 &1529459380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529459376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d0962033cd429ab751ca584541f471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 1529459378}
+  playerAvatar: {fileID: 1529459367}
 --- !u!1 &1681378912
 GameObject:
   m_ObjectHideFlags: 0
