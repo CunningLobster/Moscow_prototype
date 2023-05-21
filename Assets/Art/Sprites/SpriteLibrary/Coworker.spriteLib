@@ -17,22 +17,108 @@ MonoBehaviour:
     m_Hash: 841637636
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Coworker Left Hand
-      m_Hash: 841637636
+    - m_Name: Relaxed Left
+      m_Hash: 89871866
       m_Sprite: {fileID: -8754210877175060518, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -8754210877175060518, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Fist Left
+      m_Hash: 868673692
+      m_Sprite: {fileID: -812074556788200637, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -812074556788200637, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 1
+    m_EntryOverrideCount: 2
   - m_Name: Coworker Right Hand
     m_Hash: 1045506447
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Coworker Right Hand
-      m_Hash: 1045506447
+    - m_Name: Relaxed Right
+      m_Hash: 716487630
       m_Sprite: {fileID: -5358003174716307277, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -5358003174716307277, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Fist Right
+      m_Hash: 244572702
+      m_Sprite: {fileID: -4017203096742352175, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4017203096742352175, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 1
+    m_EntryOverrideCount: 2
+  - m_Name: Mouth
+    m_Hash: 520385427
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Smile Opne Mouth
+      m_Hash: 784484516
+      m_Sprite: {fileID: 4659238158956540233, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4659238158956540233, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Pcuker Lip
+      m_Hash: 886211514
+      m_Sprite: {fileID: 4125386790483069896, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4125386790483069896, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Open Lip
+      m_Hash: 977597070
+      m_Sprite: {fileID: 6101935271445544910, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6101935271445544910, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Teeth
+      m_Hash: 24102260
+      m_Sprite: {fileID: -8414789899659629649, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8414789899659629649, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Open Mouth
+      m_Hash: 563146577
+      m_Sprite: {fileID: -2904313754975321461, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2904313754975321461, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Laugh
+      m_Hash: 592735362
+      m_Sprite: {fileID: 3193493187326215677, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3193493187326215677, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Oh
+      m_Hash: 894543967
+      m_Sprite: {fileID: -6558853718223548281, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6558853718223548281, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: EE
+      m_Hash: 174136480
+      m_Sprite: {fileID: 4943928374721447630, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4943928374721447630, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: U
+      m_Hash: 151210742
+      m_Sprite: {fileID: -3951068439626177660, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3951068439626177660, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Woo
+      m_Hash: 702212742
+      m_Sprite: {fileID: 8659984905112983719, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8659984905112983719, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: FV
+      m_Hash: 636620477
+      m_Sprite: {fileID: 7191773930130238285, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7191773930130238285, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: LNDTH
+      m_Hash: 833165749
+      m_Sprite: {fileID: 3361473976264230220, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3361473976264230220, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: CDS
+      m_Hash: 736780484
+      m_Sprite: {fileID: 5252210739844779037, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5252210739844779037, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: BMP
+      m_Hash: 585359360
+      m_Sprite: {fileID: 6759515695208633570, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6759515695208633570, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 14
   m_PrimaryLibraryGUID: 
