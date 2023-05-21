@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -12,15 +13,21 @@ public class PlayerMover : MonoBehaviour
 
     private Rigidbody playerRigidBody;
     private Vector2 playerDirection;
+    NavMeshAgent agent;
+    [SerializeField] GameObject point;
+
 
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         playerRigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        agent.destination = point.transform.position;
+
         Vector3 vertical = transform.forward * playerDirection.y;
         Vector3 horizontal = transform.right * playerDirection.x;
         playerRigidBody.velocity = (vertical + horizontal) * speed * speedMultiplier * Time.fixedDeltaTime;
