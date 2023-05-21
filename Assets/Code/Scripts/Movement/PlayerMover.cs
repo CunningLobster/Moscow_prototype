@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Code.Scripts.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,8 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float velocity = 10;
     private Rigidbody playerRigidBody;
     private Vector2 playerDirection;
+
+    [SerializeField] private AvatarController playerAvatar;
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +33,7 @@ public class PlayerMover : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         playerDirection = context.ReadValue<Vector2>();
+        playerAvatar.FlipSprite(playerDirection);
+        playerAvatar.AnimateMove(playerDirection);
     }
 }
