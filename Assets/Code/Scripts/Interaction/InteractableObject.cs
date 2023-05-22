@@ -38,6 +38,9 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (_raycaster.Hit.transform == null) return;
         _isPointed = _raycaster.Hit.transform != null && _raycaster.Hit.transform.Equals(transform);
+
+        if (_isPointed)
+            Debug.Log(gameObject.name);
     }
 
     public abstract void Interact(InputAction.CallbackContext context);
