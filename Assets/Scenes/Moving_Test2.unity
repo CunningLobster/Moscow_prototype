@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77632108f18ace1459f7939dfd1d5c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _distance: 1
   MouseClickAction:
     m_Name: Mouse Click
     m_Type: 0
@@ -552,6 +553,10 @@ PrefabInstance:
     - target: {fileID: 2934332141943214883, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
       propertyPath: m_Name
       value: InteractableObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332142714496392, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: _distance
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}

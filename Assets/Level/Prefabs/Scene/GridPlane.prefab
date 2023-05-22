@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 3963869469114232601}
   - component: {fileID: 3963869469114232602}
   - component: {fileID: 3963869469114232603}
+  - component: {fileID: 1298381640}
   m_Layer: 0
   m_Name: GridPlane
   m_TagString: Untagged
@@ -237,6 +238,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1298381640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3963869469114232605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77632108f18ace1459f7939dfd1d5c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distance: 1
+  MouseClickAction:
+    m_Name: Mouse Click
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b368910b-45ed-4130-869f-3f9521562bfa
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8e58c7b5-9cda-4f9d-945a-e03b959d7547
+      m_Path: <Mouse>/leftButton
+      m_Interactions: Tap
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Click
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &3963869469222652535
 GameObject:
   m_ObjectHideFlags: 0
