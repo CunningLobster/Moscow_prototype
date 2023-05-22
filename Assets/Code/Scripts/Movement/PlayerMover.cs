@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class PlayerMover : MonoBehaviour
 
     private Rigidbody playerRigidBody;
     private Vector2 playerDirection;
+    NavMeshAgent agent;
 
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         playerRigidBody = GetComponent<Rigidbody>();
     }
 
