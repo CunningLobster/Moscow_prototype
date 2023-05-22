@@ -11,8 +11,8 @@ public class Raycaster : MonoBehaviour
     void Update()
     {
         CameraRaycast(out _hit);
-        if (_hit.transform != null)
-            Debug.Log(_hit.transform.name);
+        // if (_hit.transform != null)
+        //     Debug.Log(_hit.transform.name);
     }
 
     bool CameraRaycast(out RaycastHit hit)

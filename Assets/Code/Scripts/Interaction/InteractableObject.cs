@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public abstract class InteractableObject : MonoBehaviour
 {
-    private Raycaster _raycaster;
+    protected Raycaster _raycaster;
     protected bool _isActive;
     [SerializeField] private InputAction MouseClickAction;
 
@@ -28,6 +28,7 @@ public abstract class InteractableObject : MonoBehaviour
 
     public void Update()
     {
+        if (_raycaster.Hit.transform == null) return;
         _isActive = _raycaster.Hit.transform != null && _raycaster.Hit.transform.Equals(transform);
 
         if (_isActive)

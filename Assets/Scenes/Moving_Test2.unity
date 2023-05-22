@@ -194,12 +194,51 @@ PrefabInstance:
       propertyPath: point
       value: 
       objectReference: {fileID: 1972783746}
+    - target: {fileID: 4948417843653288311, guid: da15742356a71dd4388bff84c5c7c414, type: 3}
+      propertyPath: m_Speed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4948417843653288319, guid: da15742356a71dd4388bff84c5c7c414, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4948417843653288304, guid: da15742356a71dd4388bff84c5c7c414, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da15742356a71dd4388bff84c5c7c414, type: 3}
+--- !u!1 &1298381635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3963869469114232605, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
+  m_PrefabInstance: {fileID: 1871503220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1298381640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298381635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77632108f18ace1459f7939dfd1d5c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseClickAction:
+    m_Name: Mouse Click
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b368910b-45ed-4130-869f-3f9521562bfa
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8e58c7b5-9cda-4f9d-945a-e03b959d7547
+      m_Path: <Mouse>/leftButton
+      m_Interactions: Tap
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Click
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &1372349939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,6 +246,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5743455438547757216, guid: 2e67fb8c490e5034aa513d97a3622f5f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5743455438900155148, guid: 2e67fb8c490e5034aa513d97a3622f5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -374,17 +417,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3963869467704420429, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.06
-      objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 84.1
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -430,10 +465,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridPlane
       objectReference: {fileID: 0}
-    - target: {fileID: 3963869469114232605, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
 --- !u!1 &1972783746
@@ -467,3 +498,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2025418406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -209.31104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 99.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -366.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934332141943214883, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
+      propertyPath: m_Name
+      value: InteractableObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
