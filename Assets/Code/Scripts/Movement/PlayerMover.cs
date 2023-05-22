@@ -14,8 +14,6 @@ public class PlayerMover : MonoBehaviour
     private Rigidbody playerRigidBody;
     private Vector2 playerDirection;
     NavMeshAgent agent;
-    [SerializeField] GameObject point;
-
 
     void Start()
     {
@@ -26,8 +24,6 @@ public class PlayerMover : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        agent.destination = point.transform.position;
-
         Vector3 vertical = transform.forward * playerDirection.y;
         Vector3 horizontal = transform.right * playerDirection.x;
         playerRigidBody.velocity = (vertical + horizontal) * speed * speedMultiplier * Time.fixedDeltaTime;
