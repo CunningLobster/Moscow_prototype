@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Paper
-  m_Shader: {fileID: -6465566751694194690, guid: 1b3a1a9b8531891438f86b8779ba7f60, type: 3}
+  m_Name: Fader
+  m_Shader: {fileID: -6465566751694194690, guid: 9d211c5e2e741d74590102f0318612db, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -24,8 +24,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _PaperTexture:
-        m_Texture: {fileID: 2800000, guid: 920e517a957283a4d8b5c6f488be71c3, type: 3}
+    - _Texture2D:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -42,8 +42,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _HideValue: 0.96
-    m_Colors:
-    - _Color: {r: 1, g: 0, b: 0, a: 1}
-    - _HideValue: {r: 1, g: 1, b: 1, a: 1}
+    - _FadeValue: 0
+    m_Colors: []
   m_BuildTextureStacks: []
