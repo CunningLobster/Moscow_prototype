@@ -13,11 +13,6 @@ public class Portal : InteractableObject
     [SerializeField] Transform spawnPoint;
     [SerializeField] Destinations destination;
 
-    [SerializeField] float fadeOutTime = 1f;
-    [SerializeField] float fadeInTime = 1f;
-    [SerializeField] float timeBetweenFades = .2f;
-
-
     public override async void Interact(InputAction.CallbackContext context)
     {
         Debug.Log(_interactionPoint.position);
