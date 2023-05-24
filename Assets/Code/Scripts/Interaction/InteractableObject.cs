@@ -1,9 +1,10 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public abstract class InteractableObject : MonoBehaviour
+public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     protected NavMeshAgent _player;
     protected Raycaster _raycaster;
@@ -12,6 +13,19 @@ public abstract class InteractableObject : MonoBehaviour
 
     [SerializeField] private float _distance = 1f;
     [SerializeField] private InputAction MouseClickAction;
+
+    [SerializeField] private Texture2D _pointCursor;
+    [SerializeField] private Vector2 _hotspot;
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Cursor.SetCursor(_pointCursor, _hotspot, CursorMode.Auto);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
 
     public void OnEnable()
     {
