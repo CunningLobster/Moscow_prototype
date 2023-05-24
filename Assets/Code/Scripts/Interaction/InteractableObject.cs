@@ -10,7 +10,8 @@ public abstract class InteractableObject : MonoBehaviour
     protected bool _isPointed;
     protected bool _isActivated;
 
-    [SerializeField] private float _distance = 1f;
+    [SerializeField] protected float _distance = 1f;
+    [SerializeField] protected Transform _interactionPoint;
     [SerializeField] private InputAction MouseClickAction;
 
     public void OnEnable()
@@ -49,5 +50,21 @@ public abstract class InteractableObject : MonoBehaviour
 
         while (Vector3.Distance(_player.transform.position, _player.destination) >= _distance)
             await Task.Yield();
+    }
+
+    protected async Task ComeToInteractionPoint()
+    {
+        _player.stoppingDistance = 0f;
+        _player.destination = _interactionPoint.position;
+
+
+        Vector2 interactionPointV2 = new Vector2(_interactionPoint.position.x, _interactionPoint.position.z);
+
+        while (Vector2.Distance(new Vector2(_player.transform.position.x, _player.transform.position.z), interactionPointV2) >= .3f)
+        {
+            await Task.Yield();
+        }
+
+
     }
 }
