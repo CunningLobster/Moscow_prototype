@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Code.Scripts.Systems;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class Portal : InteractableObject
 {
@@ -10,44 +12,34 @@ public class Portal : InteractableObject
 
     enum Destinations { A, B, C, D }
     [SerializeField] int sceneToLoad = -1;
-    [SerializeField] Transform spawnPoint;
     [SerializeField] Destinations destination;
 
-    public override async void Interact(InputAction.CallbackContext context)
+    protected override async Task RunInteractionTask()
     {
-        Debug.Log(_interactionPoint.position);
-        try
+        _player.GetComponent<PlayerMover>().Target = gameObject;
+        await ComeToInteractionPoint();
+
+        Debug.Log("Open door");
+
+        if (string.IsNullOrEmpty(_sceneName))
         {
-            if (_isPointed)
-            {
-                _player.GetComponent<PlayerMover>().Target = gameObject;
-                await ComeToInteractionPoint();
-
-                Debug.Log("Open door");
-
-                if (string.IsNullOrEmpty(_sceneName))
-                {
-                    Debug.LogError("Scene name is empty");
-                    return;
-                }
-                FindObjectOfType<LevelManager>().LoadScene(_sceneName);
-
-            }
-        }
-        catch
-        {
+            Debug.LogError("Scene name is empty");
             return;
         }
 
+        //await Task.Run(() => FindObjectOfType<LevelManager>().LoadScene(_sceneName));
+        await Task.Run(() => Debug.Log("runrurnurnurn"));
+
+        Portal otherPortal = GetOtherPortal();
     }
 
     private void UpdatePlayer(Portal otherPortal)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindObjectOfType<PlayerMover>().gameObject;
         //player.GetComponent<NavMeshAgent>().Warp(otherPortal.spawnPoint.position);
         player.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-        player.transform.position = otherPortal.spawnPoint.position;
-        player.transform.rotation = otherPortal.spawnPoint.rotation;
+        player.transform.position = otherPortal._interactionPoint.position;
+        player.transform.rotation = otherPortal._interactionPoint.rotation;
         player.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 
     }

@@ -22,6 +22,8 @@ namespace Code.Scripts.Systems
 
         public void LoadScene(string sceneName)
         {
+            loaderCanvasGroup.alpha = 1;
+
             SceneManager.LoadScene(sceneName);
             loaderCanvas.SetActive(true);
 
@@ -34,7 +36,6 @@ namespace Code.Scripts.Systems
                     DOTween.Clear();
                     loaderCanvas.SetActive(false);
                 }));
-            
         }
     }
 }

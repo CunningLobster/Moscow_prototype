@@ -7,29 +7,19 @@ using System.Threading;
 
 public class ColorChanger : InteractableObject
 {
-    public override async void Interact(InputAction.CallbackContext context)
+    protected override async Task RunInteractionTask()
     {
-        try
-        {
-            if (_isPointed)
-            {
-                _player.GetComponent<PlayerMover>().Target = gameObject;
-                await ComeAlong();
+        _player.GetComponent<PlayerMover>().Target = gameObject;
+        await ComeAlong();
 
-                if (_player.GetComponent<PlayerMover>().Target.Equals(gameObject))
-                {
-                    gameObject.GetComponent<Renderer>().material.color = Color.cyan;
-                    await Task.Delay(1000);
-                    gameObject.GetComponent<Renderer>().material.color = Color.red;
-                    await Task.Delay(1000);
-                    gameObject.GetComponent<Renderer>().material.color = Color.green;
-
-                }
-            }
-        }
-        catch
+        if (_player.GetComponent<PlayerMover>().Target.Equals(gameObject))
         {
-            return;
+            gameObject.GetComponent<Renderer>().material.color = Color.cyan;
+            await Task.Delay(1000);
+            gameObject.GetComponent<Renderer>().material.color = Color.red;
+            await Task.Delay(1000);
+            gameObject.GetComponent<Renderer>().material.color = Color.green;
+
         }
     }
 

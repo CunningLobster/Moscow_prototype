@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
@@ -55,7 +57,22 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
             Debug.Log(gameObject.name);
     }
 
-    public abstract void Interact(InputAction.CallbackContext context);
+    public async void Interact(InputAction.CallbackContext context)
+    {
+        if (_isPointed)
+        {
+            try
+            {
+                await RunInteractionTask();
+            }
+            catch
+            {
+                return;
+            }
+        }
+    }
+
+    protected abstract Task RunInteractionTask();
 
     protected async Task ComeAlong()
     {

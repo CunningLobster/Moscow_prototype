@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4948417843653288310}
   - component: {fileID: 4948417843653288305}
   - component: {fileID: 4948417843653288311}
+  - component: {fileID: 2027056090}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -29,14 +30,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4948417843653288319}
-  m_LocalRotation: {x: 0.13160956, y: 0.08769172, z: 0.015629878, w: 0.9872917}
+  m_LocalRotation: {x: 0.13160956, y: 0.08769173, z: 0.015629876, w: 0.98729163}
   m_LocalPosition: {x: 96.9, y: -111.1, z: 275.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.9, y: 10.57, z: 3.2}
 --- !u!33 &4948417843653288306
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -216,7 +217,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 200
+  m_Speed: 10
   m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -228,3 +229,16 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2027056090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4948417843653288319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d69869646c65c44482868a32fa92935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: f0f07a9f-792a-4393-86f8-3094fab3afe6
