@@ -515,27 +515,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 59
   m_MaxRayIntersections: 0
---- !u!1 &1696375058 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3963869467704420430, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-  m_PrefabInstance: {fileID: 1871503220}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &1696375061
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696375058}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 5, y: 1.5, z: 0.05}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 1.45, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &1731858842
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +566,7 @@ MonoBehaviour:
       m_Action: Mouse Click
       m_Flags: 0
     m_Flags: 0
-  _pointCursor: {fileID: 0}
+  _pointCursor: {fileID: 2800000, guid: f7cd476ec6b3ec445b3e763e2febf357, type: 3}
   _hotspot: {x: 0, y: 0}
 --- !u!136 &1731858844
 CapsuleCollider:
@@ -683,10 +662,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3.13
       objectReference: {fileID: 0}
-    - target: {fileID: 3963869467704420430, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 3963869467842312010, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Center.y
       value: 1.45
@@ -699,10 +674,6 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.45
       objectReference: {fileID: 0}
-    - target: {fileID: 3963869468402530040, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -714,18 +685,6 @@ PrefabInstance:
     - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -812,18 +771,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2934332141943214880, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.66
       objectReference: {fileID: 0}
@@ -866,10 +813,6 @@ PrefabInstance:
     - target: {fileID: 2934332141943214883, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
       propertyPath: m_Name
       value: InteractableObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 2934332142714496392, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}
-      propertyPath: _distance
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3de50d7efecd91e4fa034976aaf29968, type: 3}

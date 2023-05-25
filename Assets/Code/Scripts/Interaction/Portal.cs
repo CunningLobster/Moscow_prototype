@@ -14,23 +14,30 @@ public class Portal : InteractableObject
     [SerializeField] int sceneToLoad = -1;
     [SerializeField] Destinations destination;
 
-    protected override async Task RunInteractionTask()
+    protected override IEnumerator RunInteractionRoutine()
     {
         _player.GetComponent<PlayerMover>().Target = gameObject;
-        await ComeToInteractionPoint();
+        yield return ComeToInteractionPoint();
 
         Debug.Log("Open door");
 
         if (string.IsNullOrEmpty(_sceneName))
         {
             Debug.LogError("Scene name is empty");
-            return;
+            yield return null;
         }
 
-        //await Task.Run(() => FindObjectOfType<LevelManager>().LoadScene(_sceneName));
-        await Task.Run(() => Debug.Log("runrurnurnurn"));
+        DontDestroyOnLoad(gameObject);
+        FindObjectOfType<LevelManager>().LoadScene(_sceneName);
+        yield return new WaitForSeconds(3f);
+
+        //yield return SceneManager.LoadSceneAsync(_sceneName);
 
         Portal otherPortal = GetOtherPortal();
+
+        UpdatePlayer(otherPortal);
+
+        Destroy(gameObject);
     }
 
     private void UpdatePlayer(Portal otherPortal)

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -57,13 +58,14 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
             Debug.Log(gameObject.name);
     }
 
-    public async void Interact(InputAction.CallbackContext context)
+    public void Interact(InputAction.CallbackContext context)
     {
         if (_isPointed)
         {
+            var coroutine = RunInteractionRoutine();
             try
             {
-                await RunInteractionTask();
+                StartCoroutine(coroutine);
             }
             catch
             {
@@ -72,18 +74,18 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
         }
     }
 
-    protected abstract Task RunInteractionTask();
+    protected abstract IEnumerator RunInteractionRoutine();
 
-    protected async Task ComeAlong()
+    protected IEnumerator ComeAlong()
     {
         _player.stoppingDistance = _distance;
         _player.destination = _raycaster.Hit.point;
 
         while (Vector3.Distance(_player.transform.position, _player.destination) >= _distance)
-            await Task.Yield();
+            yield return null;
     }
 
-    protected async Task ComeToInteractionPoint()
+    protected IEnumerator ComeToInteractionPoint()
     {
         _player.stoppingDistance = 0f;
         _player.destination = _interactionPoint.position;
@@ -92,10 +94,6 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
         Vector2 interactionPointV2 = new Vector2(_interactionPoint.position.x, _interactionPoint.position.z);
 
         while (Vector2.Distance(new Vector2(_player.transform.position.x, _player.transform.position.z), interactionPointV2) >= .3f)
-        {
-            await Task.Yield();
-        }
-
-
+            yield return null;
     }
 }

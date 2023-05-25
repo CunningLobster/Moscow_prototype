@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2934332141943214883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -209.31104, y: -154, z: 502}
-  m_LocalScale: {x: 45.7, y: 45.7, z: 45.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2934332142714496396}
@@ -142,7 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4a5397ea7eb72489e3219087a8d96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distance: 100
+  _distance: 2
+  _interactionPoint: {fileID: 0}
   MouseClickAction:
     m_Name: Mouse Click
     m_Type: 0
@@ -160,3 +161,5 @@ MonoBehaviour:
       m_Action: Mouse Click
       m_Flags: 0
     m_Flags: 0
+  _pointCursor: {fileID: 2800000, guid: f7cd476ec6b3ec445b3e763e2febf357, type: 3}
+  _hotspot: {x: 0, y: 0}
