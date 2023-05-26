@@ -28,7 +28,22 @@ public class SoundManager: MonoBehaviour
                 CaseService(1);// индекс соотвествует очередности в инспекторе
                 break;
             case "WalkOneStep"://звук одного шага
+                CaseService(2);
+                break;
+            case "CheckGarbage"://шумим проверяя мусорку
                 CaseService(3);
+                break;
+            case "DogBarking"://собака лает за дверью соседа
+                CaseService(4);
+                break;
+            case "DoorBell"://обыкновенный звонок в дверь
+                CaseService(5);
+                break;
+            case "ReadingBook"://звук чтения книги или записки
+                CaseService(6);
+                break;
+            case "ThunderWeather"://раскаты грома, звуки грозовой погоды без шума дождя
+                CaseService(7);
                 break;
             default:
                 break;
