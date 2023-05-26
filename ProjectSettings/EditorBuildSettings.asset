@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScenes/Appartment.unity
     guid: d81d011a508214140b1421248a32d214
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Cafe.unity
+    guid: c2dd2988f53ffb946b3c429fcb74af78
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Park.unity
+    guid: d794bf95a50da9146b144927768b8727
   m_configObjects: {}
