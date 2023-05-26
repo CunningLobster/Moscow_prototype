@@ -93,7 +93,7 @@ BoxCollider:
   m_GameObject: {fileID: 408520187302295237}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8974580045202817015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d216e15bd8e2c7646987c0dee1038d43, type: 3}
+  m_Script: {fileID: 11500000, guid: 7239d861367e30745b0b6286f4dd23b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 1
@@ -181,12 +181,12 @@ MonoBehaviour:
     m_Name: Mouse Click
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: f218bcc1-059f-4c0e-b1a0-fabe768ad971
+    m_Id: 2f57d7f8-b7bc-4f3f-bec9-80c323fa56cb
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 7a2750fb-05b4-491f-84e8-bc54776d5443
+      m_Id: 1d0381e3-98c4-48f0-8938-fec1ce3546e9
       m_Path: <Mouse>/leftButton
       m_Interactions: Tap
       m_Processors: 
@@ -194,6 +194,11 @@ MonoBehaviour:
       m_Action: Mouse Click
       m_Flags: 0
     m_Flags: 0
+  _pointCursor: {fileID: 2800000, guid: e088b9af83e92a34f96e4863962ad541, type: 3}
+  _hotspot: {x: 0, y: 0}
+  _sceneName: Next Scene
+  sceneToLoad: -1
+  destination: 0
 --- !u!65 &8839483873169247253
 BoxCollider:
   m_ObjectHideFlags: 0
