@@ -1,9 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.InputSystem;
 
 public class Surface : InteractableObject
 {

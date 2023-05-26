@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Threading;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -13,11 +10,10 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected Raycaster _raycaster;
     protected bool _isPointed;
     protected bool _isActivated;
+    private InputAction MouseClickAction = new InputAction();
 
     [SerializeField] protected float _distance = 1f;
     [SerializeField] protected Transform _interactionPoint;
-    [SerializeField] private InputAction MouseClickAction;
-
     [SerializeField] private Texture2D _pointCursor;
     [SerializeField] private Vector2 _hotspot;
 
@@ -33,6 +29,7 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
 
     public void OnEnable()
     {
+        MouseClickAction.AddBinding("<Mouse>/leftButton", "tap");
         MouseClickAction.Enable();
         MouseClickAction.performed += Interact;
     }
@@ -89,7 +86,6 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     {
         _player.stoppingDistance = 0f;
         _player.destination = _interactionPoint.position;
-
 
         Vector2 interactionPointV2 = new Vector2(_interactionPoint.position.x, _interactionPoint.position.z);
 

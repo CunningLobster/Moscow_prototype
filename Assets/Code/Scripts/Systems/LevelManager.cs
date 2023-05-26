@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +26,10 @@ namespace Code.Scripts.Systems
             SceneManager.LoadScene(sceneName);
             loaderCanvas.SetActive(true);
 
+            //Отключение курсора во время загрузки
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             Sequence loadingScreen = DOTween.Sequence();
             loadingScreen
                 .AppendInterval(3)
@@ -35,7 +38,17 @@ namespace Code.Scripts.Systems
                 {
                     DOTween.Clear();
                     loaderCanvas.SetActive(false);
+                    //Включение курсора
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                 }));
+        }
+
+        //Загрузка сцены асинхронно
+        public AsyncOperation LoadSceneAsync(string sceneName)
+        {
+            LoadScene(sceneName);
+            return new AsyncOperation();
         }
     }
 }
