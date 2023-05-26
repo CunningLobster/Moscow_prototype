@@ -17,32 +17,32 @@ public class SoundManager: MonoBehaviour
     //**************************************************МУЗЫКА*************************************************
     //---------------------------------------------------------------------------------------------------------
     //**************************************************ЗВУКИ**************************************************
-    public void SituationSound(string SituationNameOfSound)//Ситуационный звук проигрываем через этого метод. Что бы не путаться, пишем в него тот звук, который хотим.
+    public void SituationSound(NameOfSound situation)//Ситуационный звук проигрываем через этого метод. Что бы не путаться, пишем в него тот звук, который хотим.
     {
-        switch (SituationNameOfSound) //вызываем из свича по имени нужный звук. Названия совпадают с названиями в ассетах
+        switch (situation) //вызываем из свича по имени нужный звук. Названия совпадают с названиями в ассетах
         {
-            case "BrokenGlass"://звук разбитого стекла
+            case NameOfSound.BrokenGlass://звук разбитого стекла
                 CaseService(0);// тут уже используем индекс, без этих ваших рандомов. Знаем, чего хотим. 
                 break;
-            case "FoleyDoorLock"://открываем дверь
+            case NameOfSound.FoleyDoorLock://открываем дверь
                 CaseService(1);// индекс соотвествует очередности в инспекторе
                 break;
-            case "WalkOneStep"://звук одного шага
+            case NameOfSound.WalkOneStep://звук одного шага
                 CaseService(2);
                 break;
-            case "CheckGarbage"://шумим проверяя мусорку
+            case NameOfSound.CheckGarbage://шумим проверяя мусорку
                 CaseService(3);
                 break;
-            case "DogBarking"://собака лает за дверью соседа
+            case NameOfSound.DogBarking://собака лает за дверью соседа
                 CaseService(4);
                 break;
-            case "DoorBell"://обыкновенный звонок в дверь
+            case NameOfSound.DoorBell://обыкновенный звонок в дверь
                 CaseService(5);
                 break;
-            case "ReadingBook"://звук чтения книги или записки
+            case NameOfSound.ReadingBook://звук чтения книги или записки
                 CaseService(6);
                 break;
-            case "ThunderWeather"://раскаты грома, звуки грозовой погоды без шума дождя
+            case NameOfSound.ThunderWeather://раскаты грома, звуки грозовой погоды без шума дождя
                 CaseService(7);
                 break;
             default:
@@ -55,4 +55,16 @@ public class SoundManager: MonoBehaviour
         }
     }
     //**************************************************ЗВУКИ**************************************************
+
+    public enum NameOfSound
+    {
+        BrokenGlass,
+        FoleyDoorLock,
+        WalkOneStep,
+        CheckGarbage,
+        DogBarking,
+        DoorBell,
+        ReadingBook,
+        ThunderWeather
+    }
 }
