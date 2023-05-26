@@ -585,6 +585,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3963869469114232602, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232605, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Name
       value: GridPlane
