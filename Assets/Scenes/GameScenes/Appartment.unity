@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2704589268694243629, guid: 5d9ccca164bf83e4d892d4aa93cfc229, type: 3}
       propertyPath: _sceneName
-      value: Basement
+      value: Lobby
       objectReference: {fileID: 0}
     - target: {fileID: 2704589268694243629, guid: 5d9ccca164bf83e4d892d4aa93cfc229, type: 3}
       propertyPath: destination
