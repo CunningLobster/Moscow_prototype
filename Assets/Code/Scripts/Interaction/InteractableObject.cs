@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -10,11 +10,10 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected Raycaster _raycaster;
     protected bool _isPointed;
     protected bool _isActivated;
+    private InputAction MouseClickAction = new InputAction();
 
     [SerializeField] protected float _distance = 1f;
     [SerializeField] protected Transform _interactionPoint;
-    [SerializeField] private InputAction MouseClickAction;
-
     [SerializeField] private Texture2D _pointCursor;
     [SerializeField] private Vector2 _hotspot;
 
@@ -30,6 +29,7 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
 
     public void OnEnable()
     {
+        MouseClickAction.AddBinding("<Mouse>/leftButton", "tap");
         MouseClickAction.Enable();
         MouseClickAction.performed += Interact;
     }
@@ -55,30 +55,41 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
             Debug.Log(gameObject.name);
     }
 
-    public abstract void Interact(InputAction.CallbackContext context);
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (_isPointed)
+        {
+            var coroutine = RunInteractionRoutine();
+            try
+            {
+                StartCoroutine(coroutine);
+            }
+            catch
+            {
+                return;
+            }
+        }
+    }
 
-    protected async Task ComeAlong()
+    protected abstract IEnumerator RunInteractionRoutine();
+
+    protected IEnumerator ComeAlong()
     {
         _player.stoppingDistance = _distance;
         _player.destination = _raycaster.Hit.point;
 
         while (Vector3.Distance(_player.transform.position, _player.destination) >= _distance)
-            await Task.Yield();
+            yield return null;
     }
 
-    protected async Task ComeToInteractionPoint()
+    protected IEnumerator ComeToInteractionPoint()
     {
         _player.stoppingDistance = 0f;
         _player.destination = _interactionPoint.position;
 
-
         Vector2 interactionPointV2 = new Vector2(_interactionPoint.position.x, _interactionPoint.position.z);
 
         while (Vector2.Distance(new Vector2(_player.transform.position.x, _player.transform.position.z), interactionPointV2) >= .3f)
-        {
-            await Task.Yield();
-        }
-
-
+            yield return null;
     }
 }
