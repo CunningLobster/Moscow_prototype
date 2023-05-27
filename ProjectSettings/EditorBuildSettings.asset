@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/IbraScene.unity
-    guid: 85bcda992f450d64c9469cbb26368832
+    path: Assets/Scenes/MainMenu.unity
+    guid: 63355475c9835e543bc78c8b19e6bbba
   - enabled: 1
-    path: Assets/Scenes/Moving_Test2.unity
-    guid: b118a3894ff05b949b35365d2e4b2eb6
+    path: Assets/Scenes/GameScenes/Neighborhood.unity
+    guid: fa3e38ea2e863084d888ac77d5a1cce8
   - enabled: 1
-    path: Assets/Scenes/Next Scene.unity
-    guid: 7a6db032bbdc025439e68d1ac927121a
+    path: Assets/Scenes/GameScenes/Lobby.unity
+    guid: c48e08ed2914a84418ab7d07b4309646
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Appartment.unity
+    guid: d81d011a508214140b1421248a32d214
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Cafe.unity
+    guid: c2dd2988f53ffb946b3c429fcb74af78
+  - enabled: 1
+    path: Assets/Scenes/GameScenes/Park.unity
+    guid: d794bf95a50da9146b144927768b8727
   m_configObjects: {}

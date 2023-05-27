@@ -24,7 +24,9 @@ public class Portal : InteractableObject
         yield return FindObjectOfType<LevelManager>().LoadSceneAsync(_sceneName);
 
         Portal otherPortal = GetOtherPortal();
-        UpdatePlayer(otherPortal);
+        if (otherPortal != null)
+            UpdatePlayer(otherPortal);
+
         Destroy(gameObject);
     }
 
@@ -40,13 +42,20 @@ public class Portal : InteractableObject
 
     private Portal GetOtherPortal()
     {
-        foreach (Portal portal in FindObjectsOfType<Portal>())
+        try
         {
-            if (portal == this || portal.destination != this.destination)
-                continue;
+            foreach (Portal portal in FindObjectsOfType<Portal>())
+            {
+                if (portal == this || portal.destination != this.destination)
+                    continue;
 
-            return portal;
+                return portal;
+            }
+            return null;
         }
-        return null;
+        catch
+        {
+            return null;
+        }
     }
 }
