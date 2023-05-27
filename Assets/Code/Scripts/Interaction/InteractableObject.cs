@@ -10,12 +10,14 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected Raycaster _raycaster;
     protected bool _isPointed;
     protected bool _isActivated;
+    protected bool _isObserved;
+
     private InputAction MouseClickAction = new InputAction();
 
     [SerializeField] protected float _distance = 1f;
     [SerializeField] protected Transform _interactionPoint;
-    [SerializeField] private Texture2D _pointCursor;
-    [SerializeField] private Vector2 _hotspot;
+    [SerializeField] protected Texture2D _pointCursor;
+    [SerializeField] protected Vector2 _hotspot;
 
     public void OnPointerEnter(PointerEventData eventData)
     {

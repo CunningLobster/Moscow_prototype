@@ -35,7 +35,6 @@ public class Portal : InteractableObject
         GameObject player = GameObject.FindObjectOfType<PlayerMover>().gameObject;
         player.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         player.transform.position = otherPortal._interactionPoint.position;
-        player.transform.rotation = otherPortal._interactionPoint.rotation;
         player.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 
     }
