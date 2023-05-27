@@ -16,17 +16,25 @@ public class GarbageBin : InteractableObject
 
         Debug.Log("Came to garbage bag");
 
-        if (_isObserved == false)
+        while (_isAvailable)
         {
-            _isObserved = true;
-            _pointCursor = _activatedCursor;
-            Cursor.SetCursor(_pointCursor, _hotspot, CursorMode.Auto);
-        }
-        else
-        {
-            _isActivated = true;
-            GetComponent<SpriteRenderer>().sprite = _activatedSprite;
-            GetComponent<Collider>().enabled = false;
+            if (!_isObserved)
+            {
+                _isObserved = true;
+                _pointCursor = _activatedCursor;
+                UpdateCursor();
+                yield break;
+            }
+            else
+            {
+                _isActivated = true;
+                GetComponent<SpriteRenderer>().sprite = _activatedSprite;
+                _isAvailable = false;
+                FindObjectOfType<GarbageContainers>().SetAvailable(true);
+                SetDefaultCursor();
+                yield break;
+            }
+
         }
     }
 
