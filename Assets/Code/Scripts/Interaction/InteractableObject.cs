@@ -8,6 +8,7 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
 {
     protected NavMeshAgent _player;
     protected Raycaster _raycaster;
+    protected SpriteRenderer _spriteRenderer;
     protected bool _isPointed;
     protected bool _isActivated;
     protected bool _isObserved;
@@ -19,6 +20,8 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     [SerializeField] protected Transform _interactionPoint;
     [SerializeField] protected Texture2D _pointCursor;
     [SerializeField] protected Vector2 _hotspot;
+    [SerializeField] protected Material _defaultMaterial;
+    [SerializeField] protected Material _outlineMaterial;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -48,6 +51,8 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     {
         _raycaster = FindObjectOfType<Raycaster>();
         _player = FindObjectOfType<PlayerMover>().GetComponent<NavMeshAgent>();
+        if (TryGetComponent(out SpriteRenderer sprite))
+            _spriteRenderer = sprite;
     }
 
     public void Update()
@@ -107,10 +112,12 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected void UpdateCursor()
     {
         Cursor.SetCursor(_pointCursor, _hotspot, CursorMode.Auto);
+        if (_spriteRenderer != null) _spriteRenderer.material = _outlineMaterial;
     }
 
     protected void SetDefaultCursor()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        if (_spriteRenderer != null) _spriteRenderer.material = _defaultMaterial;
     }
 }
