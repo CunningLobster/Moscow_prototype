@@ -109,7 +109,7 @@ GameObject:
   m_Layer: 0
   m_Name: Interaction Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -177,27 +177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _distance: 1
   _interactionPoint: {fileID: 4170195891965427001}
-  MouseClickAction:
-    m_Name: Mouse Click
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 2f57d7f8-b7bc-4f3f-bec9-80c323fa56cb
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 1d0381e3-98c4-48f0-8938-fec1ce3546e9
-      m_Path: <Mouse>/leftButton
-      m_Interactions: Tap
-      m_Processors: 
-      m_Groups: 
-      m_Action: Mouse Click
-      m_Flags: 0
-    m_Flags: 0
   _pointCursor: {fileID: 2800000, guid: e088b9af83e92a34f96e4863962ad541, type: 3}
   _hotspot: {x: 0, y: 0}
   _sceneName: Next Scene
-  sceneToLoad: -1
   destination: 0
 --- !u!65 &8839483873169247253
 BoxCollider:
