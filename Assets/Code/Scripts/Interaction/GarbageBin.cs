@@ -26,6 +26,7 @@ public class GarbageBin : InteractableObject
         {
             _isActivated = true;
             GetComponent<SpriteRenderer>().sprite = _activatedSprite;
+            GetComponent<Collider>().enabled = false;
         }
     }
 
