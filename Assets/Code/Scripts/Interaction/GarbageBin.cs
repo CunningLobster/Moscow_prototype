@@ -9,10 +9,10 @@ public class GarbageBin : InteractableObject
 
     protected override IEnumerator RunInteractionRoutine()
     {
-        if (_isActivated) yield return null;
+        if (_isActivated) yield break;
 
         _player.GetComponent<PlayerMover>().Target = gameObject;
-        yield return ComeAlong();
+        yield return ComeToInteractionPoint();
 
         Debug.Log("Came to garbage bag");
 
@@ -34,7 +34,6 @@ public class GarbageBin : InteractableObject
                 SetDefaultCursor();
                 yield break;
             }
-
         }
     }
 
