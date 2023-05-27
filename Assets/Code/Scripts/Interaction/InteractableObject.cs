@@ -10,21 +10,25 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected Raycaster _raycaster;
     protected bool _isPointed;
     protected bool _isActivated;
+    protected bool _isObserved;
+    [SerializeField] protected bool _isAvailable = true;
+
     private InputAction MouseClickAction = new InputAction();
 
     [SerializeField] protected float _distance = 1f;
     [SerializeField] protected Transform _interactionPoint;
-    [SerializeField] private Texture2D _pointCursor;
-    [SerializeField] private Vector2 _hotspot;
+    [SerializeField] protected Texture2D _pointCursor;
+    [SerializeField] protected Vector2 _hotspot;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Cursor.SetCursor(_pointCursor, _hotspot, CursorMode.Auto);
+        if (!_isAvailable) return;
+        UpdateCursor();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        SetDefaultCursor();
     }
 
     public void OnEnable()
@@ -48,7 +52,9 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
 
     public void Update()
     {
+        if (!_isAvailable) return;
         if (_raycaster.Hit.transform == null) return;
+
         _isPointed = _raycaster.Hit.transform != null && _raycaster.Hit.transform.Equals(transform);
 
         if (_isPointed)
@@ -91,5 +97,20 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
 
         while (Vector2.Distance(new Vector2(_player.transform.position.x, _player.transform.position.z), interactionPointV2) >= .3f)
             yield return null;
+    }
+
+    public void SetAvailable(bool isAvailable)
+    {
+        _isAvailable = isAvailable;
+    }
+
+    protected void UpdateCursor()
+    {
+        Cursor.SetCursor(_pointCursor, _hotspot, CursorMode.Auto);
+    }
+
+    protected void SetDefaultCursor()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
