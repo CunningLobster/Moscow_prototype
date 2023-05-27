@@ -32,7 +32,7 @@ namespace Code.Scripts.Systems
 
             Sequence loadingScreen = DOTween.Sequence();
             loadingScreen
-                .AppendInterval(3)
+                .AppendInterval(1)
                 .Append(loaderCanvasGroup.DOFade(0, 1))
                 .AppendCallback((() =>
                 {

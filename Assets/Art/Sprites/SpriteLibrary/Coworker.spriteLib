@@ -17,34 +17,84 @@ MonoBehaviour:
     m_Hash: 841637636
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Relaxed Left
-      m_Hash: 89871866
+    - m_Name: Relaxed Back Palm
+      m_Hash: 810125083
       m_Sprite: {fileID: -8754210877175060518, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -8754210877175060518, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
-    - m_Name: Fist Left
-      m_Hash: 868673692
+    - m_Name: Fist
+      m_Hash: 189249346
       m_Sprite: {fileID: -812074556788200637, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -812074556788200637, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Ok
+      m_Hash: 744028645
+      m_Sprite: {fileID: -5941507278156635122, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5941507278156635122, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Relaxed Palm
+      m_Hash: 102323531
+      m_Sprite: {fileID: -5648114827490926076, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5648114827490926076, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Fist Fingers
+      m_Hash: 346003624
+      m_Sprite: {fileID: -7933374689622900416, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7933374689622900416, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Finger Up
+      m_Hash: 893244174
+      m_Sprite: {fileID: 8606298384038612070, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8606298384038612070, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Palm Beg
+      m_Hash: 455183018
+      m_Sprite: {fileID: -2199904211857743216, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2199904211857743216, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 2
+    m_EntryOverrideCount: 7
   - m_Name: Coworker Right Hand
     m_Hash: 1045506447
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Relaxed Right
-      m_Hash: 716487630
+    - m_Name: Relaxed Back Palm
+      m_Hash: 810125083
       m_Sprite: {fileID: -5358003174716307277, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -5358003174716307277, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
-    - m_Name: Fist Right
-      m_Hash: 244572702
+    - m_Name: Fist
+      m_Hash: 189249346
       m_Sprite: {fileID: -4017203096742352175, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -4017203096742352175, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Ok
+      m_Hash: 744028645
+      m_Sprite: {fileID: -7880842690067322667, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -7880842690067322667, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Relaxed Palm
+      m_Hash: 102323531
+      m_Sprite: {fileID: -6454098904792308108, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6454098904792308108, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Fist Finger
+      m_Hash: 734149174
+      m_Sprite: {fileID: -2069495967136283043, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2069495967136283043, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Finger Up
+      m_Hash: 893244174
+      m_Sprite: {fileID: 9063226425470296698, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 9063226425470296698, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+    - m_Name: Palm Beg
+      m_Hash: 455183018
+      m_Sprite: {fileID: 4015261291615824056, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4015261291615824056, guid: 61ecd7531531a044f875dbf55c6d4244, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 2
+    m_EntryOverrideCount: 7
   - m_Name: Mouth
     m_Hash: 520385427
     m_CategoryList: []

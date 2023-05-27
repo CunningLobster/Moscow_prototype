@@ -1,6 +1,7 @@
 using Code.Scripts.Systems;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Code.Scripts.UI.MainMenu
 {
@@ -9,7 +10,7 @@ namespace Code.Scripts.UI.MainMenu
         public void ChangeScene(string sceneName)
         {
             DOTween.Clear();
-            LevelManager.Instance.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
