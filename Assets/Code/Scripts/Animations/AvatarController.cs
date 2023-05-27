@@ -13,12 +13,12 @@ namespace Code.Scripts.Animations
 
         public void FlipSprite(Vector2 movementDirection)
         {
-            playerAvatar.localScale = movementDirection.x switch
-            {
-                > 0 => Vector3.one,
-                < 0 => new Vector3(-1, 1, 1),
-                _ => playerAvatar.localScale
-            };
+            if (movementDirection.x > 0)
+                playerAvatar.localScale = Vector3.one;
+            else if (movementDirection.x < 0)
+                playerAvatar.localScale = new Vector3(-1, 1, 1);
+            else
+                playerAvatar.localScale = playerAvatar.localScale;
         }
     }
 }

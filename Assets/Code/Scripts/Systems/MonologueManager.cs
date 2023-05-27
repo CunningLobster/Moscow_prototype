@@ -31,7 +31,7 @@ namespace Code.Scripts.Systems
         public void HideMonologue()
         {
             frameText.DOFade(0, 1);
-            dialogueFrame.DOFade(0, 1).OnComplete(() => dialogueFrame.gameObject.SetActive(false));
+            dialogueFrame.DOFade(0, 0.8f).OnComplete(() => dialogueFrame.gameObject.SetActive(false));
         }
     }
 }
