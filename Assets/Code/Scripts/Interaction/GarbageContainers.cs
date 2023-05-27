@@ -6,14 +6,15 @@ public class GarbageContainers : InteractableObject
 {
     protected override IEnumerator RunInteractionRoutine()
     {
-        _player.GetComponent<PlayerMover>().Target = gameObject;
-        yield return ComeAlong();
+        while (_isAvailable)
+        {
+            _player.GetComponent<PlayerMover>().Target = gameObject;
+            yield return ComeToInteractionPoint();
 
-        Debug.Log("Garbage is utilized");
+            Debug.Log("Garbage is utilized");
 
-        _isAvailable = false;
-        SetDefaultCursor();
-
-        yield break;
+            _isAvailable = false;
+            SetDefaultCursor();
+        }
     }
 }
