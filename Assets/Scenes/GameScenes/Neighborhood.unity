@@ -607,6 +607,8 @@ GameObject:
   - component: {fileID: 1548338323}
   - component: {fileID: 1548338322}
   - component: {fileID: 1548338321}
+  - component: {fileID: 1548338325}
+  - component: {fileID: 1548338326}
   m_Layer: 0
   m_Name: GarbageBin
   m_TagString: Untagged
@@ -649,6 +651,8 @@ MonoBehaviour:
   _outlineMaterial: {fileID: 2100000, guid: 5446c2ba209f99840a7ac470e963840c, type: 2}
   _activatedSprite: {fileID: 21300000, guid: 86384384151c6cf43b9b2a853b882366, type: 3}
   _activatedCursor: {fileID: 2800000, guid: 8cf820f1b78865a48b6c5c4b0cddb03b, type: 3}
+  binMonologueObserv: {fileID: 1548338325}
+  binMonologueInteraction: {fileID: 1548338326}
 --- !u!212 &1548338323
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -717,6 +721,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -46.46, z: 0}
+--- !u!114 &1548338325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548338320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20b4bb6d21a49359fe6c91094ac8e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonologueText: "\u0427\u0442\u043E \u0437\u0430 \u0447\u0435\u0440\u0442\u0438
+    \u0432\u044B\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u044E\u0442 \u043F\u0430\u043A\u0435\u0442\u044B
+    \u0441 \u0434\u043E\u043C\u0430\u0448\u043D\u0438\u043C \u043C\u0443\u0441\u043E\u0440\u043E\u043C
+    \u0432 \u0443\u0440\u043D\u0443? \u0412\u0435\u0434\u044C \u0434\u043E \u043A\u043E\u043D\u0442\u0435\u0439\u043D\u0435\u0440\u043E\u0432
+    \u0440\u0443\u043A\u043E\u0439 \u043F\u043E\u0434\u0430\u0442\u044C!"
+  playerAnimator: {fileID: 0}
+--- !u!114 &1548338326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548338320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20b4bb6d21a49359fe6c91094ac8e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonologueText: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439, \u043F\u043E\u043C\u043E\u0433\u0443
+    \u043C\u0435\u0441\u0442\u043D\u044B\u043C \u0434\u0432\u043E\u0440\u043D\u0438\u043A\u0430\u043C..."
+  playerAnimator: {fileID: 0}
 --- !u!1 &1556770178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1370,7 @@ GameObject:
   - component: {fileID: 1880464851}
   - component: {fileID: 1880464850}
   - component: {fileID: 1880464849}
+  - component: {fileID: 1880464852}
   - component: {fileID: 1880464848}
   m_Layer: 0
   m_Name: GarbageContainers
@@ -1373,6 +1411,7 @@ MonoBehaviour:
   _hotspot: {x: 0, y: 0}
   _defaultMaterial: {fileID: 0}
   _outlineMaterial: {fileID: 2100000, guid: 5446c2ba209f99840a7ac470e963840c, type: 2}
+  containerMonologue: {fileID: 1880464852}
 --- !u!212 &1880464850
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1441,3 +1480,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1880464852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880464847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20b4bb6d21a49359fe6c91094ac8e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonologueText: "\u0427\u0438\u0441\u0442\u043E \u043D\u0435 \u0442\u0430\u043C,
+    \u0433\u0434\u0435 \u0443\u0431\u0438\u0440\u0430\u044E\u0442, \u0430 \u0442\u0430\u043C,
+    \u0433\u0434\u0435 \u043D\u0435 \u043C\u0443\u0441\u043E\u0440\u044F\u0442."
+  playerAnimator: {fileID: 0}
