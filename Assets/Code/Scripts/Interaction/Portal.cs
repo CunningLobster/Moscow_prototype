@@ -21,6 +21,13 @@ public class Portal : InteractableObject
         }
 
         DontDestroyOnLoad(gameObject);
+
+        if (_spriteRenderer != null)
+        {
+            AudioClip clip = FindObjectOfType<SoundManager>().LoadClip(SoundManager.NameOfSound.FoleyDoorLock);
+            FindObjectOfType<AudioSource>().PlayOneShot(clip);
+        }
+
         yield return FindObjectOfType<LevelManager>().LoadSceneAsync(_sceneName);
 
         Portal otherPortal = GetOtherPortal();
