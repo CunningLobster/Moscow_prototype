@@ -23,8 +23,9 @@ public class SoundManager : MonoBehaviour
     //**************************************************������*************************************************
     public void PlaySceneMusic()//���� ��������� ����������� ����
     {
-        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex; //�������� ���������� ����� � ����������
-        MusicAudioSource.PlayOneShot(audioClipsMusic[CurrentSceneIndex]); //����������� ������ � ���������� ������� �����
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        MusicAudioSource.clip = audioClipsMusic[CurrentSceneIndex];
+        MusicAudioSource.Play(); //����������� ������ � ���������� ������� �����
     }
     //**************************************************������*************************************************
     //---------------------------------------------------------------------------------------------------------
