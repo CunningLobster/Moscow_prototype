@@ -11,6 +11,15 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip[] audioClipsSound; //��� ����� ������
     [SerializeField] AudioClip[] audioClipsMusic; //����� ����� ������
 
+    public static SoundManager Instance;
+        
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
     //**************************************************������*************************************************
     public void PlaySceneMusic()//���� ��������� ����������� ����
     {
