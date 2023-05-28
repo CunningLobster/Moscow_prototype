@@ -25,7 +25,7 @@ public class SoundManager: MonoBehaviour
 
     public AudioClip LoadClip(NameOfSound name) //метод загрузки ситуационного звука
     {
-        string path = "Audio/Sounds/" + name; //путь плюс имя
+        string path = "Audio/Sound/" + name; //путь плюс имя
         AudioClip clip = Resources.Load<AudioClip>(path); //загрузка
         return clip;
     }
