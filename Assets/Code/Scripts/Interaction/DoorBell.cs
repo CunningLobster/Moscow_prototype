@@ -9,16 +9,16 @@ public class DoorBell : InteractableObject
         _player.GetComponent<PlayerMover>().Target = gameObject;
         yield return ComeToInteractionPoint();
 
-        float duration = 4.272f;
+        AudioClip clip = FindObjectOfType<SoundManager>().LoadClip(SoundManager.NameOfSound.DoorBell);
         float progress = 0f;
 
         if (_isAvailable)
         {
-            FindObjectOfType<SoundManager>().SituationSound(SoundManager.NameOfSound.DoorBell);
+            FindObjectOfType<AudioSource>().PlayOneShot(clip);
             _isAvailable = false;
         }
 
-        while (progress <= duration)
+        while (progress <= clip.length)
         {
             progress += Time.deltaTime;
             yield return null;

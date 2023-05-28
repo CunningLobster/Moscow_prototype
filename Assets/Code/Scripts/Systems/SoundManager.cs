@@ -1,33 +1,47 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Linq;
+using System;
 
-public class SoundManager: MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    [SerializeField] AudioSource MusicAudioSource; //пока выжимаем все из одного аудио ресурса
+    [SerializeField] AudioSource MusicAudioSource; //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     [SerializeField] AudioSource SoundAudioSource;
-    [SerializeField] AudioClip[] audioClipsSound; //наш набор звуков
-    [SerializeField] AudioClip[] audioClipsMusic; //здесь набор музыки
+    [SerializeField] AudioClip[] audioClipsSound; //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    [SerializeField] AudioClip[] audioClipsMusic; //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
-    //**************************************************МУЗЫКА*************************************************
-    public void PlaySceneMusic()//пока случайная музыкальная тема
+    //**************************************************пїЅпїЅпїЅпїЅпїЅпїЅ*************************************************
+    public void PlaySceneMusic()//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     {
-        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex; //получаем билдиндекс сцены в переменную
-        MusicAudioSource.PlayOneShot(audioClipsMusic[CurrentSceneIndex]); //проигрываем музыку с порядковым номером сцены
+        int CurrentSceneIndex = SceneManager.GetActiveScene().buildIndex; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+        MusicAudioSource.PlayOneShot(audioClipsMusic[CurrentSceneIndex]); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     }
-    //**************************************************МУЗЫКА*************************************************
+    //**************************************************пїЅпїЅпїЅпїЅпїЅпїЅ*************************************************
     //---------------------------------------------------------------------------------------------------------
-    //**************************************************ЗВУКИ**************************************************
+    //**************************************************пїЅпїЅпїЅпїЅпїЅ**************************************************
 
-    public void PlaySituationSound(AudioClip situation)//метод проигрывающий выбранный ситуационный клип через аудио источник для звуков
+    public void PlaySituationSound(AudioClip situation)//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     {
         SoundAudioSource.PlayOneShot(situation);
     }
 
-    public AudioClip LoadClip(NameOfSound name) //метод загрузки ситуационного звука
+    public AudioClip LoadClip(NameOfSound name) //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     {
-        string path = "Audio/Sounds/" + name; //путь плюс имя
-        AudioClip clip = Resources.Load<AudioClip>(path); //загрузка
+        var clipDict = MapSounds();
+        AudioClip clip = clipDict[name]; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         return clip;
+    }
+
+    Dictionary<NameOfSound, AudioClip> MapSounds()
+    {
+        Dictionary<NameOfSound, AudioClip> clipDict = new Dictionary<NameOfSound, AudioClip>();
+        var names = Enum.GetValues(typeof(NameOfSound));
+        for (int i = 0; i < names.Length; i++)
+        {
+            clipDict[(NameOfSound)names.GetValue(i)] = audioClipsSound[i];
+        }
+        return clipDict;
     }
 
     public enum NameOfSound
@@ -41,43 +55,43 @@ public class SoundManager: MonoBehaviour
         ReadingBook,
         ThunderWeather
     }
-    //**************************************************ЗВУКИ*************************************************
+    //**************************************************пїЅпїЅпїЅпїЅпїЅ*************************************************
     //---------------------------------------------------------------------------------------------------------
-    //**********************************************СТАРЫЙ СВИТЧ**********************************************
-    public void OldSituationSound(NameOfSound situation)//Ситуационный звук проигрываем через этого метод. Что бы не путаться, пишем в него тот звук, который хотим.
+    //**********************************************пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ**********************************************
+    public void OldSituationSound(NameOfSound situation)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.
     {
-        switch (situation) //вызываем из свича по имени нужный звук. Названия совпадают с названиями в ассетах
+        switch (situation) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         {
-            case NameOfSound.BrokenGlass://звук разбитого стекла
-                CaseServiceSituation(0);// тут уже используем индекс, без этих ваших рандомов. Знаем, чего хотим. 
+            case NameOfSound.BrokenGlass://пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+                CaseServiceSituation(0);// пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. 
                 break;
-            case NameOfSound.FoleyDoorLock://открываем дверь
-                CaseServiceSituation(1);// индекс соотвествует очередности в инспекторе
+            case NameOfSound.FoleyDoorLock://пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+                CaseServiceSituation(1);// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 break;
-            case NameOfSound.WalkOneStep://звук одного шага
+            case NameOfSound.WalkOneStep://пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                 CaseServiceSituation(2);
                 break;
-            case NameOfSound.CheckGarbage://шумим проверяя мусорку
+            case NameOfSound.CheckGarbage://пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 CaseServiceSituation(3);
                 break;
-            case NameOfSound.DogBarking://собака лает за дверью соседа
+            case NameOfSound.DogBarking://пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                 CaseServiceSituation(4);
                 break;
-            case NameOfSound.DoorBell://обыкновенный звонок в дверь
+            case NameOfSound.DoorBell://пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
                 CaseServiceSituation(5);
                 break;
-            case NameOfSound.ReadingBook://звук чтения книги или записки
+            case NameOfSound.ReadingBook://пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 CaseServiceSituation(6);
                 break;
-            case NameOfSound.ThunderWeather://раскаты грома, звуки грозовой погоды без шума дождя
+            case NameOfSound.ThunderWeather://пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 CaseServiceSituation(7);
                 break;
             default:
                 break;
         }
-        void CaseServiceSituation(int SituationNumberOfSound)// сервисный метод для удобоваримости вида свича
+        void CaseServiceSituation(int SituationNumberOfSound)// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         {
-            SoundAudioSource.PlayOneShot(audioClipsSound[SituationNumberOfSound]);// проигрываем из аудиосорса элемент с индексом
+            SoundAudioSource.PlayOneShot(audioClipsSound[SituationNumberOfSound]);// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
     }
 }
