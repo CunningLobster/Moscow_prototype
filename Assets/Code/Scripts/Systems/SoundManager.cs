@@ -53,7 +53,8 @@ public class SoundManager : MonoBehaviour
         DogBarking,
         DoorBell,
         ReadingBook,
-        ThunderWeather
+        ThunderWeather,
+        PlasticBag
     }
     //**************************************************�����*************************************************
     //---------------------------------------------------------------------------------------------------------
