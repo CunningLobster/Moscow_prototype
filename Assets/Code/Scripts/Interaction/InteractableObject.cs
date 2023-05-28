@@ -12,7 +12,7 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected bool _isPointed;
     protected bool _isActivated;
     protected bool _isObserved;
-    protected bool _isAvailable = true;
+    [SerializeField] protected bool _isAvailable = true;
 
     private InputAction MouseClickAction = new InputAction();
 
