@@ -12,9 +12,15 @@ namespace Code.Scripts.UI
         [SerializeField] private List<Image> splashScreens = new();
         [SerializeField] private List<MonologueComponent> monologueList = new();
         
+        
 
         private void Start()
         {
+            if (LevelManager.Instance.FirstPlay)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
             Sequence presentation = DOTween.Sequence();
 
             for (int i = 0; i < splashScreens.Count; i++)
@@ -28,7 +34,12 @@ namespace Code.Scripts.UI
                     .Join(splashScreens[i].DOFade(0, 1));
             }
 
-            presentation.AppendCallback(() => gameObject.SetActive(false));
+            presentation.AppendCallback(() =>
+            {
+                LevelManager.Instance.FirstPlay = true;
+                gameObject.SetActive(false);
+            });
+
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Code.Scripts.Systems
         [SerializeField] private CanvasGroup loaderCanvasGroup;
         public bool HasNote;
         public bool RiddleSolved;
+        public bool FirstPlay;
         
         
         private void Awake()
