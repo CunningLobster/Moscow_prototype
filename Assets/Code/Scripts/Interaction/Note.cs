@@ -15,7 +15,8 @@ public class Note : InteractableObject
             yield return ComeToInteractionPoint();
 
             Debug.Log("Got the note");
-            MonologueManager.Instance.ShowMonologue(noteMonologue);
+            LevelManager.Instance.HasNote = true;
+            noteMonologue.Observ();
             SoundManager.Instance.PlaySceneMusic();
 
             FindObjectOfType<SoundManager>().OldSituationSound(SoundManager.NameOfSound.ReadingBook);

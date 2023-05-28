@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Code.Scripts.Riddles
 {
     public class NoteRiddle : MonoBehaviour
     {
         [SerializeField] private List<TextMeshProUGUI> letters = new();
+        [SerializeField] private NavMeshAgent playerAgent;
+        [SerializeField] private InteractableObject exitToPark;
         public void SelectLetter(string letter)
         {
             foreach (var t in letters)
@@ -37,6 +40,8 @@ namespace Code.Scripts.Riddles
             if (word == "ПАРК")
             {
                 gameObject.SetActive(false);
+                playerAgent.enabled = true;
+                exitToPark._isAvailable = true;
             }
             else
             {

@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Code.Scripts.Systems;
 using UnityEngine;
 
 public class CafeDoor : InteractableObject
 {
     [SerializeField] private Texture2D _activatedCursor;
-
+    [SerializeField] private MonologueComponent cafeMonologue;
+    [SerializeField] private GameObject riddleButton;
+    
     protected override IEnumerator RunInteractionRoutine()
     {
         _player.GetComponent<PlayerMover>().Target = gameObject;
@@ -19,7 +22,10 @@ public class CafeDoor : InteractableObject
             _isObserved = true;
             _pointCursor = _activatedCursor;
             UpdateCursor();
+            cafeMonologue.Observ();
+            riddleButton.SetActive(true);
             yield break;
+            
         }
         else
         {

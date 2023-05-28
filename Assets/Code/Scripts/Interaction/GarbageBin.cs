@@ -17,8 +17,6 @@ public class GarbageBin : InteractableObject
 
         _player.GetComponent<PlayerMover>().Target = gameObject;
         yield return ComeToInteractionPoint();
-
-        Debug.Log("Came to garbage bag");
         
 
         while (_isAvailable)
@@ -28,17 +26,16 @@ public class GarbageBin : InteractableObject
                 _isObserved = true;
                 _pointCursor = _activatedCursor;
                 UpdateCursor();
-                MonologueManager.Instance.ShowMonologue(binMonologueObserv);
+                binMonologueObserv.Observ();
                 yield break;
             }
             else
             {
                 _isActivated = true;
                 GetComponent<SpriteRenderer>().sprite = _activatedSprite;
-                MonologueManager.Instance.ShowMonologue(binMonologueInteraction);
+                binMonologueInteraction.Action();
                 AudioClip clip = FindObjectOfType<SoundManager>().LoadClip(SoundManager.NameOfSound.PlasticBag);
                 FindObjectOfType<AudioSource>().PlayOneShot(clip);
-                //FindObjectOfType<SoundManager>().OldSituationSound(SoundManager.NameOfSound.PlasticBag);
 
                 _isAvailable = false;
                 FindObjectOfType<GarbageContainers>().SetAvailable(true);

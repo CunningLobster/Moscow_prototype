@@ -17,7 +17,7 @@ public class DoorBell : InteractableObject
 
         if (_isAvailable)
         {
-            MonologueManager.Instance.ShowMonologue(doorBellMonologue);
+            doorBellMonologue.Action();
             FindObjectOfType<AudioSource>().PlayOneShot(clip);
             _isAvailable = false;
         }

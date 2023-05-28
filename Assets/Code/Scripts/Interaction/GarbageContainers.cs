@@ -14,7 +14,7 @@ public class GarbageContainers : InteractableObject
             _player.GetComponent<PlayerMover>().Target = gameObject;
             yield return ComeToInteractionPoint();
             
-            MonologueManager.Instance.ShowMonologue(containerMonologue);
+            containerMonologue.Action();
             FindObjectOfType<SoundManager>().OldSituationSound(SoundManager.NameOfSound.CheckGarbage);
 
             _isAvailable = false;

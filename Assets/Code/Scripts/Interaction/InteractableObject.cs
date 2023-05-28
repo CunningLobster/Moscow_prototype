@@ -1,4 +1,6 @@
 using System.Collections;
+using Code.Scripts.Animations;
+using Code.Scripts.Systems;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
@@ -12,7 +14,9 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected bool _isPointed;
     protected bool _isActivated;
     protected bool _isObserved;
-    [SerializeField] protected bool _isAvailable = true;
+    [SerializeField] protected bool _checkForNote;
+    [SerializeField] protected bool _checkForRiddle;
+    [SerializeField] public bool _isAvailable = true;
 
     private InputAction MouseClickAction = new InputAction();
 
@@ -34,11 +38,16 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
         SetDefaultCursor();
     }
 
-    public void OnEnable()
+    public virtual void OnEnable()
     {
         MouseClickAction.AddBinding("<Mouse>/leftButton", "tap");
         MouseClickAction.Enable();
         MouseClickAction.performed += Interact;
+
+        if (_checkForNote)
+            _isAvailable = LevelManager.Instance.HasNote;
+        if (_checkForRiddle)
+            _isAvailable = LevelManager.Instance.RiddleSolved;
     }
 
     public void OnDisable()

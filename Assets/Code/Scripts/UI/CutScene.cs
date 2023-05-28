@@ -21,7 +21,7 @@ namespace Code.Scripts.UI
             {
                 var i1 = i;
                 presentation
-                    .AppendCallback(() => monologueList[i1].Interact())
+                    .AppendCallback(() => monologueList[i1].Observ())
                     .Join(splashScreens[i].DOFade(1, 1))
                     .AppendInterval(delays[i])
                     .AppendCallback(() => MonologueManager.Instance.HideMonologue())

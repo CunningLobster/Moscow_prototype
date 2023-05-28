@@ -9,9 +9,16 @@ namespace Code.Scripts.Systems
         [SerializeField] private Animator playerAnimator;
 
         private static readonly int Think = Animator.StringToHash("Think");
+        private static readonly int Interact = Animator.StringToHash("Interact");
 
         //Вызывать этот метод, чтобы показать мысли персонажа
-        public void Interact()
+        public void Action()
+        {
+            MonologueManager.Instance.ShowMonologue(this);
+            if (playerAnimator != null) playerAnimator.SetTrigger(Interact);
+        }
+
+        public void Observ()
         {
             MonologueManager.Instance.ShowMonologue(this);
             if (playerAnimator != null) playerAnimator.SetTrigger(Think);

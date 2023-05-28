@@ -10,7 +10,10 @@ namespace Code.Scripts.Systems
 
         [SerializeField] private GameObject loaderCanvas;
         [SerializeField] private CanvasGroup loaderCanvasGroup;
-
+        public bool HasNote;
+        public bool RiddleSolved;
+        
+        
         private void Awake()
         {
             if (Instance == null)
