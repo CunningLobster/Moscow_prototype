@@ -311,6 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356684756}
   - component: {fileID: 356684755}
+  - component: {fileID: 356684757}
   m_Layer: 0
   m_Name: ShopDoor
   m_TagString: Untagged
@@ -348,6 +349,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 36.81, z: 0}
+--- !u!114 &356684757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356684754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a528e78c0ffdb4d8ef531e5bc6e1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAvailable: 1
+  _distance: 1
+  _interactionPoint: {fileID: 267081950}
+  _pointCursor: {fileID: 2800000, guid: 2127df7700d025f4d93488d08f05bafe, type: 3}
+  _hotspot: {x: 0, y: 0}
+  _defaultMaterial: {fileID: 0}
+  _outlineMaterial: {fileID: 2100000, guid: 5446c2ba209f99840a7ac470e963840c, type: 2}
 --- !u!1001 &462458511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,11 +636,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232602, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232605, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Name
       value: GridPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963869469114232605, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
