@@ -51,6 +51,7 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+
         if (_spriteRenderer != null)
             _defaultMaterial = _spriteRenderer.material;
     }
