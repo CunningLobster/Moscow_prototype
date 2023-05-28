@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Code.Scripts.Systems;
 using UnityEngine;
 
 public class Note : InteractableObject
 {
+    [SerializeField] private MonologueComponent noteMonologue;
+    
     protected override IEnumerator RunInteractionRoutine()
     {
         while (_isAvailable)
@@ -12,6 +15,8 @@ public class Note : InteractableObject
             yield return ComeToInteractionPoint();
 
             Debug.Log("Got the note");
+            MonologueManager.Instance.ShowMonologue(noteMonologue);
+            SoundManager.Instance.PlaySceneMusic();
 
             FindObjectOfType<SoundManager>().OldSituationSound(SoundManager.NameOfSound.ReadingBook);
             _isAvailable = false;
