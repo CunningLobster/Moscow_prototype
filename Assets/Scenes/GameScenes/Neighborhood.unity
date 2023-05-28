@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: f43f09d623466a049936fdbcca363b0d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7669b84039d44a14f95e59665c30e114, type: 2}
 --- !u!1 &389622029 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3963869468402530040, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
@@ -1202,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3963869467704420430, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 127
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3963869467842312010, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Center.y
@@ -1214,7 +1214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3963869467842312012, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 127
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3963869468402530038, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Center.y
@@ -1234,7 +1234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3963869468402530040, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 127
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232600, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_RootOrder
@@ -1298,7 +1298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469114232605, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469222652533, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Center.y
@@ -1310,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3963869469222652535, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 127
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4515845552960828921, guid: d7a44930bcfbfca47a09315d17656aa5, type: 3}
       propertyPath: m_Carve
