@@ -14,6 +14,7 @@ public class PlayerMover : MonoBehaviour, ISaveable
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        gameObject.transform.rotation = Quaternion.Euler(0, Camera.main.transform.rotation.eulerAngles.y, 0);
     }
 
     public object CaptureState()
