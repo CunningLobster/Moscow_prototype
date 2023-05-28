@@ -12,7 +12,7 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected bool _isPointed;
     protected bool _isActivated;
     protected bool _isObserved;
-    [SerializeField] protected bool _isAvailable = true;
+    protected bool _isAvailable = true;
 
     private InputAction MouseClickAction = new InputAction();
 
@@ -47,12 +47,18 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
         MouseClickAction.Enable();
     }
 
+    public void Awake()
+    {
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        if (_spriteRenderer != null)
+            _defaultMaterial = _spriteRenderer.material;
+    }
+
     public void Start()
     {
         _raycaster = FindObjectOfType<Raycaster>();
         _player = FindObjectOfType<PlayerMover>().GetComponent<NavMeshAgent>();
-        if (TryGetComponent(out SpriteRenderer sprite))
-            _spriteRenderer = sprite;
     }
 
     public void Update()
@@ -112,12 +118,20 @@ public abstract class InteractableObject : MonoBehaviour, IPointerEnterHandler, 
     protected void UpdateCursor()
     {
         Cursor.SetCursor(_pointCursor, _hotspot, CursorMode.Auto);
-        if (_spriteRenderer != null) _spriteRenderer.material = _outlineMaterial;
+        SetSpriteMaterial(_outlineMaterial);
     }
+
 
     protected void SetDefaultCursor()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        if (_spriteRenderer != null) _spriteRenderer.material = _defaultMaterial;
+        SetSpriteMaterial(_defaultMaterial);
     }
+
+    private void SetSpriteMaterial(Material material)
+    {
+        if (_spriteRenderer == null) return;
+        if (_spriteRenderer != null) _spriteRenderer.material = material;
+    }
+
 }
