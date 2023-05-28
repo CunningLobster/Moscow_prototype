@@ -1055,6 +1055,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 596833786385138617, guid: 5d9ccca164bf83e4d892d4aa93cfc229, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 938387780853726863, guid: 5d9ccca164bf83e4d892d4aa93cfc229, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1735,7 +1739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0768d75ebfd6268499cbc3e105f2e55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isAvailable: 1
   _distance: 1
   _interactionPoint: {fileID: 0}
   _pointCursor: {fileID: 2800000, guid: 04aba7380d1344f429c942e0edc59089, type: 3}
