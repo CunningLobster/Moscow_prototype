@@ -63,7 +63,8 @@ public class SoundManager : MonoBehaviour
         DoorBell,
         ReadingBook,
         ThunderWeather,
-        PlasticBag
+        PlasticBag,
+        KnockDoor
     }
     //**************************************************�����*************************************************
     //---------------------------------------------------------------------------------------------------------
@@ -95,6 +96,12 @@ public class SoundManager : MonoBehaviour
                 break;
             case NameOfSound.ThunderWeather://������� �����, ����� �������� ������ ��� ���� �����
                 CaseServiceSituation(7);
+                break;
+            case NameOfSound.PlasticBag://������� �����, ����� �������� ������ ��� ���� �����
+                CaseServiceSituation(8);
+                break;
+            case NameOfSound.KnockDoor://������� �����, ����� �������� ������ ��� ���� �����
+                CaseServiceSituation(9);
                 break;
             default:
                 break;
