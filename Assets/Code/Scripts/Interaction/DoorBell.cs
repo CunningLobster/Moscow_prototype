@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Code.Scripts.Systems;
 using UnityEngine;
 
 public class DoorBell : InteractableObject
 {
+    [SerializeField] private MonologueComponent doorBellMonologue;
+    
     protected override IEnumerator RunInteractionRoutine()
     {
         _player.GetComponent<PlayerMover>().Target = gameObject;
@@ -14,6 +17,7 @@ public class DoorBell : InteractableObject
 
         if (_isAvailable)
         {
+            MonologueManager.Instance.ShowMonologue(doorBellMonologue);
             FindObjectOfType<AudioSource>().PlayOneShot(clip);
             _isAvailable = false;
         }
