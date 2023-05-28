@@ -18,12 +18,12 @@ public class SoundManager: MonoBehaviour
     //---------------------------------------------------------------------------------------------------------
     //**************************************************ЗВУКИ**************************************************
 
-    void PlaySituationSound(AudioClip situation)
+    public void PlaySituationSound(AudioClip situation)//метод проигрывающий выбранный ситуационный клип через аудио источник для звуков
     {
         SoundAudioSource.PlayOneShot(situation);
     }
 
-    AudioClip LoadClip(NameOfSound name) //метод загрузки ситуационного звука
+    public AudioClip LoadClip(NameOfSound name) //метод загрузки ситуационного звука
     {
         string path = "Audio/Sounds/" + name; //путь плюс имя
         AudioClip clip = Resources.Load<AudioClip>(path); //загрузка
