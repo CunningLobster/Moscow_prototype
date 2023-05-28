@@ -11,7 +11,7 @@ public class CafeDoor : InteractableObject
         _player.GetComponent<PlayerMover>().Target = gameObject;
         yield return ComeToInteractionPoint();
 
-        AudioClip clip = FindObjectOfType<SoundManager>().LoadClip(SoundManager.NameOfSound.DoorBell);
+        AudioClip clip = FindObjectOfType<SoundManager>().LoadClip(SoundManager.NameOfSound.KnockDoor);
         float progress = 0f;
 
         if (!_isObserved)
