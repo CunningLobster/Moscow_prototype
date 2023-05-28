@@ -230,10 +230,6 @@ PrefabInstance:
       propertyPath: _sceneName
       value: Lobby
       objectReference: {fileID: 0}
-    - target: {fileID: 2704589268694243629, guid: 5d9ccca164bf83e4d892d4aa93cfc229, type: 3}
-      propertyPath: _outlineMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 54bafffec3d010346978116234b02454, type: 2}
     - target: {fileID: 3255614280472433794, guid: 5d9ccca164bf83e4d892d4aa93cfc229, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.46
@@ -593,7 +589,7 @@ MonoBehaviour:
   _pointCursor: {fileID: 2800000, guid: 04aba7380d1344f429c942e0edc59089, type: 3}
   _hotspot: {x: 0, y: 0}
   _defaultMaterial: {fileID: 0}
-  _outlineMaterial: {fileID: 2100000, guid: 54bafffec3d010346978116234b02454, type: 2}
+  _outlineMaterial: {fileID: 2100000, guid: 5446c2ba209f99840a7ac470e963840c, type: 2}
   _activatedSprite: {fileID: 21300000, guid: 86384384151c6cf43b9b2a853b882366, type: 3}
   _activatedCursor: {fileID: 2800000, guid: 8cf820f1b78865a48b6c5c4b0cddb03b, type: 3}
 --- !u!212 &1548338323
@@ -1319,7 +1315,7 @@ MonoBehaviour:
   _pointCursor: {fileID: 2800000, guid: 8cf820f1b78865a48b6c5c4b0cddb03b, type: 3}
   _hotspot: {x: 0, y: 0}
   _defaultMaterial: {fileID: 0}
-  _outlineMaterial: {fileID: 2100000, guid: 54bafffec3d010346978116234b02454, type: 2}
+  _outlineMaterial: {fileID: 2100000, guid: 5446c2ba209f99840a7ac470e963840c, type: 2}
 --- !u!212 &1880464850
 SpriteRenderer:
   m_ObjectHideFlags: 0

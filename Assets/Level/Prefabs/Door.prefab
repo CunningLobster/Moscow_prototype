@@ -168,7 +168,7 @@ MonoBehaviour:
   _pointCursor: {fileID: 2800000, guid: e088b9af83e92a34f96e4863962ad541, type: 3}
   _hotspot: {x: 0, y: 0}
   _defaultMaterial: {fileID: 0}
-  _outlineMaterial: {fileID: 2100000, guid: 54bafffec3d010346978116234b02454, type: 2}
+  _outlineMaterial: {fileID: 2100000, guid: 5446c2ba209f99840a7ac470e963840c, type: 2}
   _sceneName: Next Scene
   destination: 0
 --- !u!65 &8839483873169247253

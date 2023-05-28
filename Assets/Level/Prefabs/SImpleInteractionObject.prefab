@@ -60,12 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbc6f0f95afc9e4e9778154d77524f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAvailable: 1
   _distance: 1
   _interactionPoint: {fileID: 7390336243423188302}
   _pointCursor: {fileID: 2800000, guid: f7cd476ec6b3ec445b3e763e2febf357, type: 3}
   _hotspot: {x: 0, y: 0}
   _defaultMaterial: {fileID: 0}
-  _outlineMaterial: {fileID: 2100000, guid: 54bafffec3d010346978116234b02454, type: 2}
+  _outlineMaterial: {fileID: 2100000, guid: 5446c2ba209f99840a7ac470e963840c, type: 2}
 --- !u!1 &4534607366661697333
 GameObject:
   m_ObjectHideFlags: 0

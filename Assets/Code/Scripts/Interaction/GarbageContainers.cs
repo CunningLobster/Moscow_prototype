@@ -11,8 +11,7 @@ public class GarbageContainers : InteractableObject
             _player.GetComponent<PlayerMover>().Target = gameObject;
             yield return ComeToInteractionPoint();
 
-            AudioClip clip = FindObjectOfType<SoundManager>().LoadClip(SoundManager.NameOfSound.PlasticBag);
-            FindObjectOfType<AudioSource>().PlayOneShot(clip);
+            FindObjectOfType<SoundManager>().OldSituationSound(SoundManager.NameOfSound.CheckGarbage);
 
             _isAvailable = false;
             SetDefaultCursor();

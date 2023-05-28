@@ -31,6 +31,8 @@ public class GarbageBin : InteractableObject
                 GetComponent<SpriteRenderer>().sprite = _activatedSprite;
                 AudioClip clip = FindObjectOfType<SoundManager>().LoadClip(SoundManager.NameOfSound.PlasticBag);
                 FindObjectOfType<AudioSource>().PlayOneShot(clip);
+                //FindObjectOfType<SoundManager>().OldSituationSound(SoundManager.NameOfSound.PlasticBag);
+
                 _isAvailable = false;
                 FindObjectOfType<GarbageContainers>().SetAvailable(true);
                 SetDefaultCursor();

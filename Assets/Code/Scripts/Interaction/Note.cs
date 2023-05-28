@@ -6,11 +6,16 @@ public class Note : InteractableObject
 {
     protected override IEnumerator RunInteractionRoutine()
     {
-        _player.GetComponent<PlayerMover>().Target = gameObject;
-        yield return ComeToInteractionPoint();
+        while (_isAvailable)
+        {
+            _player.GetComponent<PlayerMover>().Target = gameObject;
+            yield return ComeToInteractionPoint();
 
-        Debug.Log("Got the note");
+            Debug.Log("Got the note");
 
-        gameObject.SetActive(false);
+            FindObjectOfType<SoundManager>().OldSituationSound(SoundManager.NameOfSound.ReadingBook);
+            _isAvailable = false;
+            _spriteRenderer.enabled = false;
+        }
     }
 }
